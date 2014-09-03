@@ -75,6 +75,8 @@ sub new {
 
     $self->_register_tab_complete;
 
+    $SIG{INT} = 'IGNORE'; # for writing out the history when received Ctrl+C.
+
     return $self;
 }
 
